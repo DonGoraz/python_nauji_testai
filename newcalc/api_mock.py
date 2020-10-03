@@ -11,3 +11,5 @@ def get_only_numbers():
         numbers.extend(digits)
 
     return '|'.join(numbers)
+
+
