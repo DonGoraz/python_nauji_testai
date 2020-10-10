@@ -1,0 +1,6 @@
+recipe = ("boil water", "insert egg", "wait 5min", "eat")
+print(len(recipe))
+print(recipe[3])
+print(recipe[-2:])
+print(recipe.count('wait 5min'))
+print(recipe.index("boil water") == 0 )

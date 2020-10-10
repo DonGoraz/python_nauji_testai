@@ -1,0 +1,7 @@
+print("A message.", type('string'))
+print(17, type(17))
+print(123.4, type(1.23))
+print(False, type(False))
+print(None, type(None))
+print(1-2j, type(1-2j))
+print(b"This is a byte sequence", type(b"This is a byte sequence"))
