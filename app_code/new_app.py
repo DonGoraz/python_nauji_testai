@@ -22,7 +22,7 @@ class EmployeeScanner:
         first_name, last_name, role, annual_salary, feedback, years_employed, email = employee_str.split(",")
         annual_salary, years_employed, feedback = float(annual_salary), int(years_employed), int(feedback)
         if cls.is_email_correct(email):
-            if not (check_if_employee_exists(email)):
+            if not(check_if_employee_exists(email)):
                 create_employee(first_name, last_name, role, annual_salary, feedback, years_employed, email)
             return cls(first_name, last_name, role, annual_salary, feedback, years_employed, email)
 
@@ -35,20 +35,20 @@ class EmployeeScanner:
             return False
 
 
+def get_file_info(fname):
+    with open(fname, "r") as read_file:
+        data = json.load(read_file)
+        return data
+
+
 create_employee_table()
 get_employees()
-
-with open("company_employees.json", "r") as read_file1:
-    data1 = json.load(read_file1)
-
-with open("feedback_for_employees.json", "r") as read_file2:
-    data2 = json.load(read_file2)
-
-x = lambda a: a >= 3
+data1 = get_file_info("company_employees.json")
+data2 = get_file_info("feedback_for_employees.json")
+x = lambda a: a >= 3  # Lambda usage for filtering people with less than 3 years of work experience
 for _ in data1["Employees"]:
     if x(_['years_employed']):
         for el in data2["Feedback"]:
             if _['emailAddress'] == el['emailAddress']:
                 EmployeeScanner.create_from_string(f"{_['firstName']},{_['lastName']},{el['role']},{_['annual_salary']},{el['feedback']},{_['years_employed']},{_['emailAddress']}")
-
 get_employees()
