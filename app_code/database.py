@@ -18,7 +18,7 @@ class DatabaseContextManager(object):
 
 
 def create_employee_table():
-    query = """CREATE TABLE Employees(
+    query = """CREATE TABLE IF NOT EXISTS Employees(
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 first_name TEXT,
                 last_name TEXT,
@@ -31,7 +31,8 @@ def create_employee_table():
         db.execute(query)
 
 
-def create_employee(first_name: str, last_name: str, role: str, annual_salary: float, feedback: int, years_employed:int, email: str):
+#def create_employee(first_name: str, last_name: str, role: str, annual_salary: float, feedback: int, years_employed: int, email: str):
+def create_employee(first_name, last_name, role, annual_salary, feedback, years_employed, email):
     query = f"""INSERT INTO Employees(first_name, last_name, role, annual_salary, feedback, years_employed, email) 
                 VALUES('{first_name}','{last_name}','{role}',{annual_salary},'{feedback}','{years_employed}', '{email}')"""
     with DatabaseContextManager("employees") as db:
@@ -50,3 +51,14 @@ def delete_employee(email: str):
     query = f"DELETE FROM Employees WHERE email = '{email}'"
     with DatabaseContextManager("employees") as db:
         db.execute(query)
+
+
+def check_if_employee_exists(email: str):
+    query = f"SELECT * FROM Employees WHERE email = '{email}'"
+    with DatabaseContextManager("employees") as db:
+        db.execute(query)
+        employee = db.fetchone()
+
+    if employee == None:
+        return False
+    return True
