@@ -24,12 +24,12 @@ class DarbuotuojasNuskaitytuvas:
         self.file_path = kelias_iki_failo
     def execute(self):
         darbuotouju_sarasas = []
-        with open(self.file_path) as f: # f is a file object
-            for i, line in enumerate(f): # iterate every line of the file
-                if i == 0: # skip first line
+        with open(self.file_path) as f:  # f is a file object
+            for i, line in enumerate(f):  # iterate every line of the file
+                if i == 0:  # skip first line
                     continue
-                clean_line = line.rstrip() # remove "\n" - end of line character at the end of each line
-                if clean_line == "": # skip empty lines
+                clean_line = line.rstrip()  # remove "\n" - end of line character at the end of each line
+                if clean_line == "":  # skip empty lines
                     continue
                 print(clean_line)
                 darbuotuojas_values = clean_line.split(',')
