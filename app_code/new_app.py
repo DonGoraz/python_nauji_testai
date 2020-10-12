@@ -24,7 +24,7 @@ class EmployeeScanner:
         if cls.is_email_correct(email):
             if not(check_if_employee_exists(email)):
                 create_employee(first_name, last_name, role, annual_salary, feedback, years_employed, email)
-            return cls(first_name, last_name, role, annual_salary, feedback, years_employed, email)
+                return print(f"Create New Employee\n {first_name}\n {last_name}\n {role}\n {annual_salary}\n {feedback}\n {years_employed}\n {email}\n")
 
     @staticmethod
     def is_email_correct(email):
@@ -42,13 +42,14 @@ def get_file_info(fname):
 
 
 create_employee_table()
-get_employees()
 data1 = get_file_info("company_employees.json")
 data2 = get_file_info("feedback_for_employees.json")
-x = lambda a: a >= 3  # Lambda usage for filtering people with less than 3 years of work experience
+
+x = lambda x: x >= 3  # Lambda usage for filtering Employee less than 3 years of work experience
 for _ in data1["Employees"]:
     if x(_['years_employed']):
         for el in data2["Feedback"]:
             if _['emailAddress'] == el['emailAddress']:
                 EmployeeScanner.create_from_string(f"{_['firstName']},{_['lastName']},{el['role']},{_['annual_salary']},{el['feedback']},{_['years_employed']},{_['emailAddress']}")
+
 get_employees()

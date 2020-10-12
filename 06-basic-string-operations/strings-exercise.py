@@ -13,6 +13,6 @@ testString = '0123456789'
 stringLength = len(testString)
 if stringLength % 2 == 0:
     middleSubstring = testString[stringLength // 2 - 2: stringLength // 2 + 2]
-else :
+else:
     middleSubstring = testString[stringLength // 2 - 2: stringLength // 2 + 3]
 print(middleSubstring)
