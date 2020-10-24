@@ -51,5 +51,6 @@ for _ in data1["Employees"]:
         for el in data2["Feedback"]:
             if _['emailAddress'] == el['emailAddress']:
                 EmployeeScanner.create_from_string(f"{_['firstName']},{_['lastName']},{el['role']},{_['annual_salary']},{el['feedback']},{_['years_employed']},{_['emailAddress']}")
+                break
 
 get_employees()
