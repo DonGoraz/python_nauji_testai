@@ -1,0 +1,51 @@
+{
+  "dogs": [
+    {
+      "id": 0,
+      "name": "maja",
+      "racce": "dog"
+    },
+    {
+      "id": 1,
+      "name": "milus",
+      "racce": "dog"
+    }
+  ],
+  "cats": [
+    {
+      "id": 0,
+      "name": "puszek",
+      "racce": "cat"
+    },
+    {
+      "id": 1,
+      "name": "greebo",
+      "racce": "cart"
+    }
+  ]
+}{
+  "dogs": [
+    {
+      "id": 0,
+      "name": "maja",
+      "racce": "dog"
+    },
+    {
+      "id": 1,
+      "name": "milus",
+      "racce": "dog"
+    }
+  ],
+  "cats": [
+    {
+      "id": 0,
+      "name": "puszek",
+      "racce": "cat"
+    },
+    {
+      "id": 1,
+      "name": "greebo",
+      "racce": "cart"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+    "dogs": [
+        {
+            "id": 0,
+            "name": "maja",
+            "racce": "dog"
+        },
+        {
+            "id": 1,
+            "name": "milus",
+            "racce": "dog"
+        }
+    ],
+    "cats": [
+        {
+            "id": 0,
+            "name": "puszek",
+            "racce": "cat"
+        },
+        {
+            "id": 1,
+            "name": "greebo",
+            "racce": "cart"
+        }
+    ],
+    "mouse": [
+        {
+            "id": 0,
+            "name": "btsbdt",
+            "race": "mouse"
+        }
+    ],
+    "mices": [
+        {
+            "id": 0,
+            "name": "liulek",
+            "racce": "moouse"
+        },
+        {
+            "id": 1,
+            "name": "Jerry",
+            "racce": "moouse"
+        }
+    ]
+}
